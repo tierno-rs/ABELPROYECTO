@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore Elite | Catálogo Premium</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="pantalla-login" class="capa-auth">
+        <div class="tarjeta-auth">
+            <h2 class="titulo-tienda">TechStore <span>Elite</span></h2>
+            <div id="formulario-login">
+                <p>Ingresa para ver el catálogo premium</p>
+                <div class="grupo-entrada">
+                    <input type="text" id="usuario-log" placeholder="Usuario">
+                    <input type="password" id="clave-log" placeholder="Contraseña">
+                </div>
+                <button class="boton-principal" onclick="iniciarSesion()">Entrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pantalla-tienda" class="oculto">
+        <header class="barra-superior">
+            <div class="logo">TechStore <span>Elite</span></div>
+            <div class="controles-usuario">
+                <div class="perfil-usuario">
+                    <span class="icono-user">👤</span>
+                    <span id="nombre-usuario-display"></span>
+                </div>
+                <button class="boton-salir" onclick="location.reload()">Cerrar Sesión</button>
+            </div>
+        </header>
+
+        <main class="layout-principal">
+            <section class="seccion-catalogo">
+                <h1 class="titulo-seccion">Catálogo Premium</h1>
+                <div id="cuadricula-productos" class="grid-productos"></div>
+            </section>
+
+            <aside class="panel-lateral">
+                <div class="tarjeta-blanca bloque-carrito">
+                    <div class="encabezado-carrito">
+                        <h3>Tu Carrito</h3>
+                        <button class="boton-vaciar" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                    </div>
+                    <div id="lista-carrito" class="items-carrito"></div>
+                    <div class="linea-total">Total: <strong id="monto-total">$0</strong></div>
+                </div>
+
+                <div class="tarjeta-blanca bloque-factura">
+                    <button class="boton-descargar-pdf" onclick="generarFacturaPDF()">Descargar Factura PDF</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
